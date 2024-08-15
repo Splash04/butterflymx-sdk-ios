@@ -1,21 +1,25 @@
-Pod::Spec.new do |s|
-  s.name = 'BMXCore'
-  s.version = '2.3.3'
-  s.swift_versions = ['5']
-  s.source = { :git => 'https://github.com/runslikebutter/butterflymx-sdk-ios.git', :tag => "v"+s.version.to_s }
-  s.resource_bundle = {"BMXCore.privacy"=>"BMXCore/PrivacyInfo.xcprivacy"}
-  s.summary = 'A Swift framework to implement ButterflyMX SDK'
-  s.homepage = 'https://github.com/runslikebutter/butterflymx-sdk-ios'
-  s.author = {'butterflymx' => 'admin@butterflymx.com'}
-  s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
-  s.platform = :ios
-  s.ios.deployment_target = '13'
-  s.source_files = [
-     'BMXCore/*.{h,swift}',
-     'BMXCore/**/*.{h,swift}'
-  ]
-  
-  s.dependency 'Alamofire', '~> 5.6'
-  s.dependency 'OAuthSwift', '~> 2.2'
-  s.dependency 'Japx/Alamofire', '~> 4.0'
+Pod::Spec.new do |spec|
+
+  spec.name         = "BMXCore"
+  spec.version      = "2.3.6"
+  spec.swift_versions = ['5']
+
+  spec.cocoapods_version = '>= 1.13.0'
+  spec.ios.deployment_target = '14.0'
+
+  spec.summary      = 'A Swift framework to implement ButterflyMX SDK'
+  spec.homepage     = "https://github.com/runslikebutter/butterflymx-sdk-ios"
+
+  spec.license      = "Apache-2.0 license"
+  spec.author       = { "ButterflyMX" => "admin@butterflymx.com" }
+  spec.source       = { :git => "https://github.com/runslikebutter/butterflymx-sdk-ios.git", :tag => 'v' + spec.version.to_s }
+
+  spec.source_files  = "BMXCore/**/*.swift"
+
+  spec.dependency 'Japx/Alamofire'
+  spec.dependency 'Alamofire', '~> 5.2'
+  spec.dependency 'OAuthSwift', '~> 2.1'
+
+  spec.resource_bundles = {'BMXCore' => ['BMXCore/PrivacyInfo.xcprivacy']}
+
 end

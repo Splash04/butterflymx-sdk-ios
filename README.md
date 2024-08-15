@@ -27,9 +27,7 @@ dependencies: [
 5. Finally, click Add Package to add the selected packages to your project.
 
 ### Cocoapods
-Previously, we had distributed our SDK as compiled framework: https://github.com/runslikebutter/butterflymx-ios-sdk
-So to use current (updated) version you have to set git: value in your pod file like this:
+To integrate BMX SDK into your Xcode project using CocoaPods, specify it in your Podfile:
 ```
-  pod 'BMXCall', :git => 'https://github.com/runslikebutter/butterflymx-sdk-ios'
-  pod 'BMXCore', :git => 'https://github.com/runslikebutter/butterflymx-sdk-ios'
+pod 'BMXCall', '2.3.5'
 ```
