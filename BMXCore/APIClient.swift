@@ -33,11 +33,13 @@ public class APIClient {
             promise.reject(with: ServiceError.unableToCreateRequest(message: "clientID or secret is empty"))
             return promise
         }
-        let params = ["grant_type": "password",
+        let params: Alamofire.Parameters = [
+                      "grant_type": "password",
                       "username": userName,
                       "password": password,
                       "client_id": clientID,
-                      "client_secret": secret]
+                      "client_secret": secret
+        ]
 
         APIClient.sessionManager.request(urlString, method: .post, parameters: params)
             .validate()
@@ -85,7 +87,7 @@ public class APIClient {
     class func doorReleaseRequest(_ panelID: String, unitID: String, method: String, successHandler: @escaping ((Data) -> Void), errorHandler: @escaping ((Error) -> Void)) {
         let urlString = BMXCoreKit.shared.environment.backendEnvironment.baseURL + "/v3/me" + "/open_door"
 
-        let params = [
+        let params: Alamofire.Parameters = [
             "data": [
                 "type": "door_release_requests",
                 "attributes": [
@@ -120,7 +122,7 @@ public class APIClient {
     class func doorReleaseRequest(_ device: DeviceModel, unitID: String, method: String, successHandler: @escaping ((Data) -> Void), errorHandler: @escaping ((Error) -> Void)) {
         let urlString = BMXCoreKit.shared.environment.backendEnvironment.baseURL + "/v3/me" + "/open_door"
 
-        let params = [
+        let params: Alamofire.Parameters = [
             "data": [
                 "type": "door_release_requests",
                 "attributes": [
@@ -202,7 +204,7 @@ public class APIClient {
 
         let promise = Promise<TenantIntegrationModel>()
         
-        let params: [String : Any]? = [
+        let params: Alamofire.Parameters = [
             "data": [
                 "type": "integrations",
                 "attributes": [
@@ -260,7 +262,7 @@ public class APIClient {
             return
         }
 
-        let parameters: [String: Any] = [
+        let parameters: Alamofire.Parameters = [
             "refresh_token": refreshToken,
             "client_id": clientID,
             "grant_type": "refresh_token",
@@ -284,7 +286,7 @@ public class APIClient {
         }
     }
     
-    public class func sendRequest(path: String, params: Parameters, method: HTTPMethod, completion: @escaping ((Result<Data, AFError>) -> Void)) {
+    public class func sendRequest(path: String, params: Alamofire.Parameters, method: HTTPMethod, completion: @escaping ((Result<Data, AFError>) -> Void)) {
         let urlString = BMXCoreKit.shared.environment.backendEnvironment.baseURL + "/v3/" + path
 
         BMXCoreKit.shared.log(format: "%@", message: "urlString: \(urlString), params: \(params)", type: .debug)
