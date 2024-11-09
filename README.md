@@ -29,5 +29,5 @@ dependencies: [
 ### Cocoapods
 To integrate BMX SDK into your Xcode project using CocoaPods, specify it in your Podfile:
 ```
-pod 'BMXCall', '2.3.7.1'
+pod 'BMXCall', '2.3.7.2'
 ```
