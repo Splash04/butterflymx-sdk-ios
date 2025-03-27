@@ -19,7 +19,7 @@ var package = Package(
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.6.1")),
         .package(url: "https://github.com/OAuthSwift/OAuthSwift.git", .upToNextMajor(from: "2.2.0")),
-        .package(url: "https://github.com/infinum/Japx.git", .upToNextMajor(from: "4.0.0")),
+        .package(url: "https://github.com/Splash04/Japx.git", .upToNextMajor(from: "4.0.0")),
         .package(name: "TwilioVideo", url: "https://github.com/twilio/twilio-video-ios.git", .upToNextMajor(from: "5.8.1"))
     ],
     targets: [
