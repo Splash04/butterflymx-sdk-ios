@@ -12,7 +12,10 @@ public enum BMXBackendEnvironment {
     case production
     case development
     case sandbox
+}
 
+public extension BMXBackendEnvironment {
+    
     var baseURL: String {
         let region = BMXCoreKit.shared.environment.getRegion()
         switch (self, region) {
