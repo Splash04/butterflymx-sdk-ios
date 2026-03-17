@@ -1,5 +1,5 @@
 {
-  "originHash" : "1936c5b594dce5ba343328a3236779ce1840398da2a9c97974bdd745b216aae0",
+  "originHash" : "4767ec7001ef8b35163e3a7a318a250c1863da00b6ba84af67f6c8f881b540c2",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -40,9 +40,9 @@
     {
       "identity" : "japx",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/infinum/Japx.git",
+      "location" : "https://github.com/Splash04/Japx.git",
       "state" : {
-        "revision" : "5f08fbe4eddfe70ab412ddd5d16a89396b32f214",
+        "revision" : "e504c5a583282d331ba1765948282e7153d25abe",
         "version" : "4.0.1"
       }
     },
